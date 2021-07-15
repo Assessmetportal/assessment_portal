@@ -1,0 +1,32 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+Django = "*"
+django-rest-framework = "*"
+psycopg2-binary = "*"
+django-environ = "*"
+Pillow = "*"
+drf-yasg = "*"
+djoser = "*"
+djangorestframework-simplejwt = "*"
+drf-writable-nested = "*"
+gunicorn = "*"
+django-bootstrap4 = "*"
+whitenoise = "*"
+
+[dev-packages]
+flake8 = "*"
+isort = "*"
+factory-boy = "*"
+install = "*"
+mypy = "*"
+ipython = "*"
+mixer = "*"
+flake8-aaa = "*"
+mock = "*"
+
+[requires]
+python_version = "3.8"
