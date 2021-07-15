@@ -1,6 +1,6 @@
 # Assessment portal
 
-## Deploing heroku
+## Deploying heroku
 
 ```sh
 $ heroku git:remote -a assessmentportal300
