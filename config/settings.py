@@ -13,7 +13,7 @@ SECRET_KEY = "6g0%ig&d^e$r79@3x77@gv)qyhd=_afu@3)ksnr-t!9tst%lae"
 
 DEBUG = env.bool("DEBUG", default=True)
 
-ALLOWED_HOSTS = ['assessmentportal123.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['*']
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
