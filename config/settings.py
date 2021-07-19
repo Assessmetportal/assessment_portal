@@ -9,7 +9,7 @@ BASE_DIR = environ.Path(__file__) - 2
 ROOT_DIR = BASE_DIR - 1
 env.read_env(str(ROOT_DIR.path("envs/.env")))
 
-SECRET_KEY = env.get('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = env.bool("DEBUG", default=True)
 
