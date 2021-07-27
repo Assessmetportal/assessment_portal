@@ -10,6 +10,12 @@ $ git push heroku main
 $ heroku run python manage.py migrate
 ```
 
+## Shutdown hosting
+
+```sh
+$ heroku ps:scale web=0
+```
+
 ## Create superuser
 
 ```sh
