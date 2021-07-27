@@ -7,6 +7,19 @@ $ heroku git:remote -a assessmentportal300
 $ heroku config:set DISABLE_COLLECTSTATIC=1
 $ heroku ps:scale web=1
 $ git push heroku main
+$ heroku run python manage.py migrate
+```
+
+## Create superuser
+
+```sh
+$ heroku run python manage.py createsuperuser
+```
+
+## Open website
+
+```sh
+$ heroku open
 ```
 
 ## Configuration
