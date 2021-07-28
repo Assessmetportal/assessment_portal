@@ -7,13 +7,10 @@ from users.models import Profile
 User = get_user_model()
 
 
-class ProfileSerializer(WritableNestedModelSerializer, serializers.ModelSerializer):
-    user = UserSerializer()
 
     class Meta:
         model = Profile
         fields = (
-            'user',
             'role',
             'technical_skills',
             'soft_skills',
