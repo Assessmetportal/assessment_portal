@@ -21,6 +21,7 @@ class ResponseSerializer(WritableNestedModelSerializer, serializers.ModelSeriali
     class Meta:
         model = Response
         fields = (
+            'id',
             'interview',
             'final_grade',
             'response',
