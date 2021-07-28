@@ -13,7 +13,7 @@ class Interview(models.Model):
                                     verbose_name=_("Interviewer"), null=True)
     interviewed = models.ForeignKey(User, on_delete=models.CASCADE, related_name="interviews_from",
                                     verbose_name=_("Interviewed"), null=True)
-    date_of_interview = models.DateTimeField()
+    date_of_interview = models.DateTimeField(null=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
