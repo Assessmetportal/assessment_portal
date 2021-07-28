@@ -8,12 +8,23 @@ User = get_user_model()
 
 
 class ProfileViewSet(mixins.ListModelMixin,
-                     mixins.CreateModelMixin,
-                     mixins.DestroyModelMixin,
                      mixins.RetrieveModelMixin,
                      mixins.UpdateModelMixin,
                      generics.GenericAPIView,
                      viewsets.ViewSet):
+    """
+        retrieve:
+            Return a profile.
+
+        list:
+            Return all profiles, ordered by most recently joined.
+
+        partial_update:
+            Update one or more fields on an existing profile.
+
+        update:
+            Update a profile.
+        """
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
 

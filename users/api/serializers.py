@@ -3,8 +3,6 @@ from django.contrib.auth import get_user_model
 from djoser.serializers import UserSerializer
 from users.models import Profile
 
-
-
 User = get_user_model()
 
 
