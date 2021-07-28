@@ -58,7 +58,7 @@ class ResponseList(mixins.ListModelMixin,
             Return an response.
 
         list:
-            Return all your responses.
+            Return responses of interviews where you were interviewed.
 
         create:
             Create a new response.
