@@ -15,5 +15,6 @@ class ProfileSerializer(serializers.ModelSerializer):
             'technical_skills',
             'soft_skills',
             'language_level',
+            'grade',
             'avatar',
         )
