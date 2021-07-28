@@ -17,11 +17,11 @@ class InterviewCreateSerializer(WritableNestedModelSerializer, serializers.Model
         )
 
 
-class InterviewSerializer(WritableNestedModelSerializer, serializers.ModelSerializer):
+class InterviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Interview
         fields = (
-            'id',
+            'id'
         )
 
 
