@@ -21,7 +21,7 @@ class InterviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Interview
         fields = (
-            'id'
+            'id',
         )
 
 
