@@ -17,8 +17,16 @@ class InterviewCreateSerializer(WritableNestedModelSerializer, serializers.Model
         )
 
 
+class InterviewSerializer(WritableNestedModelSerializer, serializers.ModelSerializer):
+    class Meta:
+        model = Interview
+        fields = (
+            'id',
+        )
+
+
 class ResponseSerializer(WritableNestedModelSerializer, serializers.ModelSerializer):
-    interview = InterviewCreateSerializer()
+    interview = InterviewSerializer()
 
     class Meta:
         model = Response
