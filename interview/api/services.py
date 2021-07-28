@@ -16,6 +16,25 @@ class InterviewList(mixins.ListModelMixin,
                     mixins.RetrieveModelMixin,
                     generics.GenericAPIView,
                     viewsets.ViewSet):
+    """
+    retrieve:
+        Return an interview.
+
+    list:
+        Return all interviews, where you were an interviewer or interviewed.
+
+    create:
+        Create a new interview.
+
+    delete:
+        Remove an existing interview.
+
+    partial_update:
+        Update one or more fields on an existing interview.
+
+    update:
+        Update a interview.
+    """
     queryset = Interview.objects.all()
     serializer_class = InterviewCreateSerializer
 
@@ -34,6 +53,25 @@ class ResponseList(mixins.ListModelMixin,
                    mixins.RetrieveModelMixin,
                    generics.GenericAPIView,
                    viewsets.ViewSet):
+    """
+        retrieve:
+            Return an response.
+
+        list:
+            Return all your responses.
+
+        create:
+            Create a new response.
+
+        delete:
+            Remove an existing response.
+
+        partial_update:
+            Update one or more fields on an existing response.
+
+        update:
+            Update a response.
+        """
     queryset = resp.objects.all()
     serializer_class = ResponseSerializer
 

@@ -14,16 +14,16 @@ class ProfileViewSet(mixins.ListModelMixin,
                      viewsets.ViewSet):
     """
         retrieve:
-            Return a profile.
+            Return a profile by id.
 
         list:
             Return all profiles, ordered by most recently joined.
 
         partial_update:
-            Update one or more fields on an existing profile.
+            Update one or more fields on an existing profile by id.
 
         update:
-            Update a profile.
+            Update a profile by id.
         """
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
