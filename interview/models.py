@@ -10,9 +10,9 @@ User = get_user_model()
 class Interview(models.Model):
     theme = models.CharField(max_length=25, default='')
     interviewer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="interviews_to",
-                                    verbose_name=_("Interviewer"), default=None, null=True)
+                                    verbose_name=_("Interviewer"), null=False)
     interviewed = models.ForeignKey(User, on_delete=models.CASCADE, related_name="interviews_from",
-                                    verbose_name=_("Interviewed"), default=None, null=True)
+                                    verbose_name=_("Interviewed"), null=False)
     date_of_interview = models.DateTimeField(null=True)
     is_active = models.BooleanField(default=True)
 
