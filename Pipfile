@@ -16,6 +16,7 @@ drf-writable-nested = "*"
 gunicorn = "*"
 django-bootstrap4 = "*"
 whitenoise = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 flake8 = "*"
