@@ -14,6 +14,7 @@ class InterviewCreateSerializer(WritableNestedModelSerializer, serializers.Model
             'interviewer',
             'interviewed',
             'date_of_interview',
+            'is_active',
         )
 
 
