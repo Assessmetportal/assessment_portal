@@ -83,7 +83,7 @@ class ResponseList(mixins.ListModelMixin,
         interview = interviewed|interviewer
         return resp.objects.filter(interview__in=interview)
 
-    @action(methods=['POST', ], detail=False)
+    @action(methods=['GET', ], detail=False)
     def get_all_responses(self, request):
         response = resp.objects.all()
         return response
