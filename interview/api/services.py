@@ -86,4 +86,5 @@ class ResponseList(mixins.ListModelMixin,
     @action(methods=['GET', ], detail=False)
     def get_all_responses(self, request):
         responses = resp.objects.all()
-        return Response(responses, status=status.HTTP_200_OK)
+        serializer = ResponseSerializer(responses, many=True)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
