@@ -60,7 +60,7 @@ class ResponseList(mixins.ListModelMixin,
             Return an response.
 
         list:
-            Return responses of interviews where you were interviewed.
+            Return responses of interviews where you were a participant.
 
         create:
             Create a new response.
@@ -80,10 +80,10 @@ class ResponseList(mixins.ListModelMixin,
     def get_queryset(self):
         interviewed = Interview.objects.filter(interviewed=self.request.user)
         interviewer = Interview.objects.filter(interviewer=self.request.user)
-        interview = interviewed|interviewer
+        interview = interviewed | interviewer
         return resp.objects.filter(interview__in=interview)
 
     @action(methods=['GET', ], detail=False)
     def get_all_responses(self, request):
-        response = resp.objects.all()
-        return response
+        responses = resp.objects.all()
+        return Response(responses, status=status.HTTP_200_OK)
