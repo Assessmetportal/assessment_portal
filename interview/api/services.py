@@ -1,4 +1,6 @@
 from django.contrib.auth import get_user_model
+from rest_framework.decorators import action
+
 from interview.api.serializers import ResponseSerializer, InterviewCreateSerializer
 from interview.models import Interview
 from interview.models import Response as resp
@@ -76,5 +78,12 @@ class ResponseList(mixins.ListModelMixin,
     serializer_class = ResponseSerializer
 
     def get_queryset(self):
-        interview = Interview.objects.filter(interviewed=self.request.user)
+        interviewed = Interview.objects.filter(interviewed=self.request.user)
+        interviewer = Interview.objects.filter(interviewer=self.request.user)
+        interview = interviewed|interviewer
         return resp.objects.filter(interview__in=interview)
+
+    @action(methods=['POST', ], detail=False)
+    def get_all_responses(self, request):
+        response = resp.objects.all()
+        return response
